@@ -1,0 +1,14 @@
+{
+  "name": "pesquisa-sistemas-profissionais",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pesquisa de validação de sistemas profissionais com geração de PDF e envio por e-mail.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "pdfkit": "^0.17.2",
+    "resend": "^6.1.2"
+  }
+}

@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Pesquisa para desenvolvimento de sistemas profissionais."
+  >
+
+  <title>Pesquisa de Sistema Profissional</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="pagina-pesquisa">
+
+  <header class="topo-pesquisa">
+
+    <div class="topo-conteudo">
+
+      <a
+        href="index.html"
+        class="voltar-inicio"
+        aria-label="Voltar para a página inicial"
+      >
+        ← Voltar
+      </a>
+
+      <span class="topo-marca">
+        Pesquisa de Sistemas Profissionais
+      </span>
+
+    </div>
+
+  </header>
+
+  <main class="container-pesquisa">
+
+    <section class="cabecalho-pesquisa">
+
+      <span
+        id="codigoPesquisa"
+        class="etiqueta"
+      >
+        Pesquisa
+      </span>
+
+      <h1 id="tituloPesquisa">
+        Carregando pesquisa...
+      </h1>
+
+      <p id="descricaoPesquisa">
+        Aguarde enquanto preparamos o formulário.
+      </p>
+
+    </section>
+
+    <noscript>
+
+      <div class="mensagem mensagem-erro">
+
+        Este formulário precisa do JavaScript ativado para funcionar.
+
+      </div>
+
+    </noscript>
+
+    <div
+      id="mensagemErroPagina"
+      class="mensagem mensagem-erro oculto"
+      role="alert"
+    ></div>
+
+    <form
+      id="formPesquisa"
+      class="formulario-pesquisa oculto"
+      novalidate
+    >
+
+      <input
+        type="hidden"
+        id="tipoPesquisa"
+        name="tipoPesquisa"
+      >
+
+      <input
+        type="hidden"
+        id="tituloPesquisaCampo"
+        name="tituloPesquisa"
+      >
+
+      <input
+        type="hidden"
+        id="codigoPesquisaCampo"
+        name="codigoPesquisa"
+      >
+
+      <!-- Campo antispam invisível -->
+      <div
+        class="campo-honeypot"
+        aria-hidden="true"
+      >
+
+        <label for="website">
+          Não preencha este campo
+        </label>
+
+        <input
+          type="text"
+          id="website"
+          name="website"
+          tabindex="-1"
+          autocomplete="off"
+        >
+
+      </div>
+
+      <!-- ETAPA 1 -->
+
+      <section
+        class="bloco-formulario"
+        data-etapa="1"
+      >
+
+        <div class="titulo-bloco">
+
+          <span class="numero-bloco">1</span>
+
+          <div>
+            <h2>Identificação</h2>
+
+            <p>
+              Conte um pouco sobre você e sua atuação profissional.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="grade-campos">
+
+          <div class="grupo-campo campo-largo">
+
+            <label for="nome">
+              Nome completo
+              <span aria-hidden="true">*</span>
+            </label>
+
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              maxlength="120"
+              autocomplete="name"
+              required
+            >
+
+            <small class="erro-campo"></small>
+
+          </div>
+
+          <div class="grupo-campo">
+
+            <label for="email">
+              E-mail
+              <span aria-hidden="true">*</span>
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              maxlength="160"
+              autocomplete="email"
+              required
+            >
+
+            <small class="erro-campo"></small>
+
+          </div>
+
+          <div class="grupo-campo">
+
+            <label for="whatsapp">
+              WhatsApp
+            </label>
+
+            <input
+              type="tel"
+              id="whatsapp"
+              name="whatsapp"
+              maxlength="20"
+              autocomplete="tel"
+              placeholder="(00) 00000-0000"
+            >
+
+            <small class="erro-campo"></small>
+
+          </div>
+
+          <div class="grupo-campo">
+
+            <label for="cidade">
+              Cidade
+              <span aria-hidden="true">*</span>
+            </label>
+
+            <input
+              type="text"
+              id="cidade"
+              name="cidade"
+              maxlength="100"
+              autocomplete="address-level2"
+              required
+            >
+
+            <small class="erro-campo"></small>
+
+          </div>
+
+          <div class="grupo-campo">
+
+            <label for="estado">
+              Estado
+              <span aria-hidden="true">*</span>
+            </label>
+
+            <select
+              id="estado"
+              name="estado"
+              required
+            >
+
+              <option value="">
+                Selecione
+              </option>
+
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+
+            </select>
+
+            <small class="erro-campo"></small>
+
+          </div>
+
+          <div class="grupo-campo">
+
+            <label for="empresa">
+              Empresa, escritório ou estabelecimento
+            </label>
+
+            <input
+              type="text"
+              id="empresa"
+              name="empresa"
+              maxlength="160"
+              autocomplete="organization"
+              placeholder="Opcional para profissionais autônomos"
+            >
+
+            <small class="erro-campo"></small>
+
+          </div>
+
+          <div class="grupo-campo">
+
+            <label for="cargo">
+              Profissão ou cargo
+              <span aria-hidden="true">*</span>
+            </label>
+
+            <select
+              id="cargo"
+              name="cargo"
+              required
+            >
+
+              <option value="">
+                Selecione
+              </option>
+
+            </select>
+
+            <small class="erro-campo"></small>
+
+          </div>
+
+          <div
+            id="campoCargoOutro"
+            class="grupo-campo oculto"
+          >
+
+            <label for="cargoOutro">
+              Informe sua profissão ou cargo
+            </label>
+
+            <input
+              type="text"
+              id="cargoOutro"
+              name="cargoOutro"
+              maxlength="120"
+            >
+
+            <small class="erro-campo"></small>
+
+          </div>
+
+          <div class="grupo-campo">
+
+            <label for="tempoExperiencia">
+              Tempo de experiência
+              <span aria-hidden="true">*</span>
+            </label>
+
+            <select
+              id="tempoExperiencia"
+              name="tempoExperiencia"
+              required
+            >
+
+              <option value="">
+                Selecione
+              </option>
+
+              <option value="Menos de 1 ano">
+                Menos de 1 ano
+              </option>
+
+              <option value="1 a 3 anos">
+                1 a 3 anos
+              </option>
+
+              <option value="4 a 7 anos">
+                4 a 7 anos
+              </option>
+
+              <option value="8 a 15 anos">
+                8 a 15 anos
+              </option>
+
+              <option value="Mais de 15 anos">
+                Mais de 15 anos
+              </option>
+
+            </select>
+
+            <small class="erro-campo"></small>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ETAPA 2 -->
+
+      <section
+        class="bloco-formulario"
+        data-etapa="2"
+      >
+
+        <div class="titulo-bloco">
+
+          <span class="numero-bloco">2</span>
+
+          <div>
+            <h2>Uso atual de sistemas</h2>
+
+            <p>
+              Informe como sua rotina é organizada atualmente.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="grade-campos">
+
+          <fieldset class="grupo-campo campo-largo">
+
+            <legend>
+              Utiliza algum sistema profissional atualmente?
+              <span aria-hidden="true">*</span>
+            </legend>
+
+            <div class="opcoes-horizontal">
+
+              <label class="opcao-radio">
+
+                <input
+                  type="radio"
+                  name="utilizaSistema"
+                  value="Sim"
+                  required
+                >
+
+                <span>Sim</span>
+
+              </label>
+
+              <label class="opcao-radio">
+
+                <input
+                  type="radio"
+                  name="utilizaSistema"
+                  value="Não"
+                  required
+                >
+
+                <span>Não</span>
+
+              </label>
+
+              <label class="opcao-radio">
+
+                <input
+                  type="radio"
+                  name="utilizaSistema"
+                  value="Utilizo planilhas ou ferramentas separadas"
+                  required
+                >
+
+                <span>
+                  Utilizo planilhas ou ferramentas separadas
+                </span>
+
+              </label>
+
+            </div>
+
+            <small class="erro-campo"></small>
+
+          </fieldset>
+
+          <div
+            id="camposSistemaAtual"
+            class="subgrade-campos campo-largo oculto"
+          >
+
+            <div class="grupo-campo">
+
+              <label for="sistemaAtual">
+                Qual sistema utiliza?
+              </label>
+
+              <input
+                type="text"
+                id="sistemaAtual"
+                name="sistemaAtual"
+                maxlength="160"
+              >
+
+            </div>
+
+            <div class="grupo-campo">
+
+              <label for="tempoUsoSistema">
+                Há quanto tempo utiliza?
+              </label>
+
+              <select
+                id="tempoUsoSistema"
+                name="tempoUsoSistema"
+              >
+
+                <option value="">
+                  Selecione
+                </option>
+
+                <option value="Menos de 6 meses">
+                  Menos de 6 meses
+                </option>
+
+                <option value="6 meses a 1 ano">
+                  6 meses a 1 ano
+                </option>
+
+                <option value="1 a 3 anos">
+                  1 a 3 anos
+                </option>
+
+                <option value="Mais de 3 anos">
+                  Mais de 3 anos
+                </option>
+
+              </select>
+
+            </div>
+
+            <div class="grupo-campo">
+
+              <label for="valorAtual">
+                Quanto paga atualmente?
+              </label>
+
+              <input
+                type="text"
+                id="valorAtual"
+                name="valorAtual"
+                maxlength="60"
+                placeholder="Ex.: R$ 250 por mês"
+              >
+
+            </div>
+
+            <div class="grupo-campo">
+
+              <label for="satisfacaoSistema">
+                Qual seu nível de satisfação?
+              </label>
+
+              <select
+                id="satisfacaoSistema"
+                name="satisfacaoSistema"
+              >
+
+                <option value="">
+                  Selecione
+                </option>
+
+                <option value="Muito insatisfeito">
+                  Muito insatisfeito
+                </option>
+
+                <option value="Insatisfeito">
+                  Insatisfeito
+                </option>
+
+                <option value="Neutro">
+                  Neutro
+                </option>
+
+                <option value="Satisfeito">
+                  Satisfeito
+                </option>
+
+                <option value="Muito satisfeito">
+                  Muito satisfeito
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+          <div class="grupo-campo">
+
+            <label for="quantidadeUsuarios">
+              Quantas pessoas utilizariam o sistema?
+              <span aria-hidden="true">*</span>
+            </label>
+
+            <select
+              id="quantidadeUsuarios"
+              name="quantidadeUsuarios"
+              required
+            >
+
+              <option value="">
+                Selecione
+              </option>
+
+              <option value="1 pessoa">
+                1 pessoa
+              </option>
+
+              <option value="2 a 5 pessoas">
+                2 a 5 pessoas
+              </option>
+
+              <option value="6 a 10 pessoas">
+                6 a 10 pessoas
+              </option>
+
+              <option value="11 a 25 pessoas">
+                11 a 25 pessoas
+              </option>
+
+              <option value="26 a 50 pessoas">
+                26 a 50 pessoas
+              </option>
+
+              <option value="Mais de 50 pessoas">
+                Mais de 50 pessoas
+              </option>
+
+            </select>
+
+            <small class="erro-campo"></small>
+
+          </div>
+
+          <div class="grupo-campo">
+
+            <label for="pretensaoTroca">
+              Pretende trocar ou contratar um sistema?
+            </label>
+
+            <select
+              id="pretensaoTroca"
+              name="pretensaoTroca"
+            >
+
+              <option value="">
+                Selecione
+              </option>
+
+              <option value="Sim, imediatamente">
+                Sim, imediatamente
+              </option>
+
+              <option value="Sim, nos próximos 6 meses">
+                Sim, nos próximos 6 meses
+              </option>
+
+              <option value="Talvez futuramente">
+                Talvez futuramente
+              </option>
+
+              <option value="Não no momento">
+                Não no momento
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="grupo-campo campo-largo">
+
+            <label for="maiorDificuldadeAtual">
+              Qual é sua maior dificuldade com os sistemas ou métodos atuais?
+              <span aria-hidden="true">*</span>
+            </label>
+
+            <textarea
+              id="maiorDificuldadeAtual"
+              name="maiorDificuldadeAtual"
+              rows="4"
+              maxlength="1500"
+              required
+              placeholder="Descreva os principais problemas, limitações ou tarefas demoradas."
+            ></textarea>
+
+            <div class="apoio-campo">
+
+              <small class="erro-campo"></small>
+
+              <small class="contador-caracteres">
+                <span data-contador="maiorDificuldadeAtual">0</span>/1500
+              </small>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ETAPA 3 DINÂMICA -->
+
+      <section
+        class="bloco-formulario"
+        data-etapa="3"
+      >
+
+        <div class="titulo-bloco">
+
+          <span class="numero-bloco">3</span>
+
+          <div>
+            <h2>Funcionalidades</h2>
+
+            <p>
+              Avalie os recursos que seriam mais importantes para sua rotina.
+            </p>
+          </div>
+
+        </div>
+
+        <div id="funcionalidadesContainer"></div>
+
+      </section>
+
+      <!-- ETAPA 4 -->
+
+      <section
+        class="bloco-formulario"
+        data-etapa="4"
+      >
+
+        <div class="titulo-bloco">
+
+          <span class="numero-bloco">4</span>
+
+          <div>
+            <h2>Prioridades e necessidades</h2>
+
+            <p>
+              Ajude a definir o que deveria ser desenvolvido primeiro.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="grade-campos">
+
+          <div class="grupo-campo campo-largo">
+
+            <label for="tarefaMaisDemorada">
+              Qual tarefa mais consome tempo em sua rotina?
+              <span aria-hidden="true">*</span>
+            </label>
+
+            <textarea
+              id="tarefaMaisDemorada"
+              name="tarefaMaisDemorada"
+              rows="4"
+              maxlength="1200"
+              required
+            ></textarea>
+
+            <div class="apoio-campo">
+
+              <small class="erro-campo"></small>
+
+              <small class="contador-caracteres">
+                <span data-contador="tarefaMaisDemorada">0</span>/1200
+              </small>
+
+            </div>
+
+          </div>
+
+          <div class="grupo-campo campo-largo">
+
+            <label for="recursoIndispensavel">
+              O que não poderia faltar no sistema?
+              <span aria-hidden="true">*</span>
+            </label>
+
+            <textarea
+              id="recursoIndispensavel"
+              name="recursoIndispensavel"
+              rows="4"
+              maxlength="1200"
+              required
+            ></textarea>
+
+            <div class="apoio-campo">
+
+              <small class="erro-campo"></small>
+
+              <small class="contador-caracteres">
+                <span data-contador="recursoIndispensavel">0</span>/1200
+              </small>
+
+            </div>
+
+          </div>
+
+          <div class="grupo-campo campo-largo">
+
+            <label for="motivoTroca">
+              O que faria você trocar sua solução atual por outra?
+            </label>
+
+            <textarea
+              id="motivoTroca"
+              name="motivoTroca"
+              rows="4"
+              maxlength="1200"
+            ></textarea>
+
+            <div class="apoio-campo">
+
+              <small></small>
+
+              <small class="contador-caracteres">
+                <span data-contador="motivoTroca">0</span>/1200
+              </small>
+
+            </div>
+
+          </div>
+
+          <div class="grupo-campo campo-largo">
+
+            <label for="funcionalidadePrimeiro">
+              Qual funcionalidade deveria ser desenvolvida primeiro?
+              <span aria-hidden="true">*</span>
+            </label>
+
+            <select
+              id="funcionalidadePrimeiro"
+              name="funcionalidadePrimeiro"
+              required
+            >
+
+              <option value="">
+                Selecione
+              </option>
+
+            </select>
+
+            <small class="erro-campo"></small>
+
+          </div>
+
+          <div class="grupo-campo campo-largo">
+
+            <label for="recursoNaoMencionado">
+              Há algum recurso importante que não foi mencionado?
+            </label>
+
+            <textarea
+              id="recursoNaoMencionado"
+              name="recursoNaoMencionado"
+              rows="4"
+              maxlength="1200"
+            ></textarea>
+
+            <div class="apoio-campo">
+
+              <small></small>
+
+              <small class="contador-caracteres">
+                <span data-contador="recursoNaoMencionado">0</span>/1200
+              </small>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ETAPA 5 -->
+
+      <section
+        class="bloco-formulario"
+        data-etapa="5"
+      >
+
+        <div class="titulo-bloco">
+
+          <span class="numero-bloco">5</span>
+
+          <div>
+            <h2>Interesse e investimento</h2>
+
+            <p>
+              Esta parte ajuda a avaliar a viabilidade comercial da solução.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="grade-campos">
+
+          <div class="grupo-campo">
+
+            <label for="faixaInvestimento">
+              Quanto consideraria justo pagar por mês?
+            </label>
+
+            <select
+              id="faixaInvestimento"
+              name="faixaInvestimento"
+            >
+
+              <option value="">
+                Prefiro não informar
+              </option>
+
+              <option value="Até R$ 100">
+                Até R$ 100
+              </option>
+
+              <option value="R$ 101 a R$ 200">
+                R$ 101 a R$ 200
+              </option>
+
+              <option value="R$ 201 a R$ 400">
+                R$ 201 a R$ 400
+              </option>
+
+              <option value="R$ 401 a R$ 700">
+                R$ 401 a R$ 700
+              </option>
+
+              <option value="R$ 701 a R$ 1.000">
+                R$ 701 a R$ 1.000
+              </option>
+
+              <option value="Acima de R$ 1.000">
+                Acima de R$ 1.000
+              </option>
+
+              <option value="Depende dos recursos oferecidos">
+                Depende dos recursos oferecidos
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="grupo-campo">
+
+            <label for="modeloCobranca">
+              Qual modelo de cobrança prefere?
+            </label>
+
+            <select
+              id="modeloCobranca"
+              name="modeloCobranca"
+            >
+
+              <option value="">
+                Selecione
+              </option>
+
+              <option value="Valor fixo por empresa">
+                Valor fixo por empresa
+              </option>
+
+              <option value="Valor por usuário">
+                Valor por usuário
+              </option>
+
+              <option value="Planos por quantidade de usuários">
+                Planos por quantidade de usuários
+              </option>
+
+              <option value="Valor conforme os módulos contratados">
+                Valor conforme os módulos contratados
+              </option>
+
+              <option value="Não tenho preferência">
+                Não tenho preferência
+              </option>
+
+            </select>
+
+          </div>
+
+          <fieldset class="grupo-campo campo-largo">
+
+            <legend>
+              Você teria interesse em participar de um teste gratuito?
+            </legend>
+
+            <div class="opcoes-horizontal">
+
+              <label class="opcao-radio">
+
+                <input
+                  type="radio"
+                  name="interesseTeste"
+                  value="Sim"
+                >
+
+                <span>Sim</span>
+
+              </label>
+
+              <label class="opcao-radio">
+
+                <input
+                  type="radio"
+                  name="interesseTeste"
+                  value="Talvez"
+                >
+
+                <span>Talvez</span>
+
+              </label>
+
+              <label class="opcao-radio">
+
+                <input
+                  type="radio"
+                  name="interesseTeste"
+                  value="Não"
+                >
+
+                <span>Não</span>
+
+              </label>
+
+            </div>
+
+          </fieldset>
+
+          <fieldset class="grupo-campo campo-largo">
+
+            <legend>
+              Gostaria de participar como usuário-piloto?
+            </legend>
+
+            <div class="opcoes-horizontal">
+
+              <label class="opcao-radio">
+
+                <input
+                  type="radio"
+                  name="usuarioPiloto"
+                  value="Sim"
+                >
+
+                <span>Sim</span>
+
+              </label>
+
+              <label class="opcao-radio">
+
+                <input
+                  type="radio"
+                  name="usuarioPiloto"
+                  value="Talvez"
+                >
+
+                <span>Talvez</span>
+
+              </label>
+
+              <label class="opcao-radio">
+
+                <input
+                  type="radio"
+                  name="usuarioPiloto"
+                  value="Não"
+                >
+
+                <span>Não</span>
+
+              </label>
+
+            </div>
+
+          </fieldset>
+
+          <div class="grupo-campo campo-largo">
+
+            <label for="comentariosAdicionais">
+              Comentários adicionais
+            </label>
+
+            <textarea
+              id="comentariosAdicionais"
+              name="comentariosAdicionais"
+              rows="5"
+              maxlength="2000"
+              placeholder="Use este espaço para sugestões, críticas ou observações."
+            ></textarea>
+
+            <div class="apoio-campo">
+
+              <small></small>
+
+              <small class="contador-caracteres">
+                <span data-contador="comentariosAdicionais">0</span>/2000
+              </small>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- CONSENTIMENTOS -->
+
+      <section class="bloco-formulario bloco-consentimento">
+
+        <div class="titulo-bloco">
+
+          <span class="numero-bloco">6</span>
+
+          <div>
+            <h2>Confirmação e privacidade</h2>
+
+            <p>
+              Revise as informações antes de enviar.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="lista-consentimentos">
+
+          <label class="opcao-checkbox destaque-consentimento">
+
+            <input
+              type="checkbox"
+              id="confirmacaoVeracidade"
+              name="confirmacaoVeracidade"
+              value="Sim"
+              required
+            >
+
+            <span>
+              Confirmo que as respostas representam minha experiência e opinião.
+              <strong>*</strong>
+            </span>
+
+          </label>
+
+          <label class="opcao-checkbox destaque-consentimento">
+
+            <input
+              type="checkbox"
+              id="consentimentoPesquisa"
+              name="consentimentoPesquisa"
+              value="Sim"
+              required
+            >
+
+            <span>
+              Autorizo o uso das respostas para pesquisa, avaliação e
+              desenvolvimento da solução, conforme a legislação aplicável.
+              <strong>*</strong>
+            </span>
+
+          </label>
+
+          <label class="opcao-checkbox">
+
+            <input
+              type="checkbox"
+              id="autorizaContato"
+              name="autorizaContato"
+              value="Sim"
+            >
+
+            <span>
+              Autorizo contato por e-mail ou WhatsApp para informações sobre
+              testes, demonstrações e desenvolvimento do projeto.
+            </span>
+
+          </label>
+
+        </div>
+
+        <small
+          id="erroConsentimentos"
+          class="erro-campo"
+        ></small>
+
+      </section>
+
+      <div
+        id="mensagemFormulario"
+        class="mensagem oculto"
+        role="status"
+        aria-live="polite"
+      ></div>
+
+      <div class="area-envio">
+
+        <p class="campos-obrigatorios">
+          Os campos indicados com * são obrigatórios.
+        </p>
+
+        <button
+          type="submit"
+          id="botaoEnviar"
+          class="botao-enviar"
+        >
+
+          <span class="texto-botao">
+            Enviar pesquisa
+          </span>
+
+          <span
+            class="carregando-botao oculto"
+            aria-hidden="true"
+          >
+            Enviando...
+          </span>
+
+        </button>
+
+      </div>
+
+    </form>
+
+  </main>
+
+  <footer class="rodape-pesquisa">
+
+    <p>
+      As informações fornecidas serão utilizadas para pesquisa e
+      desenvolvimento de sistemas profissionais.
+    </p>
+
+  </footer>
+
+  <script src="pesquisas.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

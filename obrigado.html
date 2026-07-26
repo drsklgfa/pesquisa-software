@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Confirmação de envio da pesquisa."
+  >
+
+  <title>Pesquisa enviada com sucesso</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="pagina-obrigado">
+
+  <main class="container-obrigado">
+
+    <div
+      class="icone-sucesso"
+      aria-hidden="true"
+    >
+      ✓
+    </div>
+
+    <span
+      id="codigoCategoria"
+      class="etiqueta"
+    >
+      Pesquisa
+    </span>
+
+    <h1>
+      Pesquisa enviada com sucesso
+    </h1>
+
+    <p>
+      Obrigado por contribuir para o desenvolvimento da plataforma.
+      Suas respostas foram registradas.
+    </p>
+
+    <div
+      id="caixaProtocolo"
+      class="caixa-protocolo oculto"
+    >
+
+      <span>
+        Protocolo
+      </span>
+
+      <strong id="numeroProtocolo"></strong>
+
+    </div>
+
+    <div class="acoes-obrigado">
+
+      <a
+        href="index.html"
+        class="botao-obrigado"
+      >
+        Voltar ao início
+      </a>
+
+      <a
+        href="index.html"
+        id="botaoOutraPesquisa"
+        class="botao-obrigado secundario"
+      >
+        Responder outra pesquisa
+      </a>
+
+    </div>
+
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const parametros = new URLSearchParams(window.location.search);
+
+      const protocolo = parametros.get("protocolo");
+      const tipo = parametros.get("tipo");
+
+      const caixaProtocolo = document.getElementById("caixaProtocolo");
+      const numeroProtocolo = document.getElementById("numeroProtocolo");
+      const codigoCategoria = document.getElementById("codigoCategoria");
+
+      const categorias = {
+        juridico: "JUR",
+        saude: "SAU",
+        medico: "MED",
+        nutricao: "NUT",
+        sst: "SST"
+      };
+
+      if (tipo && categorias[tipo]) {
+        codigoCategoria.textContent = categorias[tipo];
+      }
+
+      if (protocolo) {
+        numeroProtocolo.textContent = protocolo;
+        caixaProtocolo.classList.remove("oculto");
+      }
+    });
+  </script>
+
+</body>
+</html>
